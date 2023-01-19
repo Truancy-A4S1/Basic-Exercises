@@ -7,10 +7,6 @@ using namespace std;
 int wordCount(string input)
 {
     int count=1, i=0;
-    if(input[i] == '\0') // if the string is null
-    {
-            return 0;
-    }
 
     while(input[i]!= '\0')
     {
