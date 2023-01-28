@@ -9,37 +9,39 @@ using namespace std;
 
 int getMode(int input[])
 {
-    int currCount=0;
-    int prevCount=0;
-    int result;
+    int counter{};
+    int highest{};
+    int res;
 
-    for(int i=0; i<=9; i++)
+    for(int i=0; i<(sizeof(input)/sizeof(input[0])-1); i++)
     {
-        for(int j=0; j<=9; j++)
+        for(int j=i; j<(sizeof(input)/sizeof(input[0]-1)); j++)
         {
             if(input[i] == input[j])
             {
-                currCount++;
+                counter++;
             }
         }
-        if(currCount > prevCount)
+
+        if(counter > highest)
         {
-            result = input[i];
+            res = input[i];
+            highest = counter;
+            counter = 0;
         }
-        prevCount = currCount;
-        currCount = 0;
     }
-    return result;
+    return res;
 }
 
 
 int main()
 {
-    int arr[10];
-    for(int i=0; i<sizeof(arr)/sizeof(arr[0]); i++)
+    int arr[] = {6,5,3,3,1,5,6,7,8,5,3,6};
+    cout << "Array: ";
+    for(int i=0; i<(sizeof(arr)/sizeof(arr[0]-1)); i++)
     {
-        cout << "Enter Element " << i+1 << "/10: ";
-        cin >> arr[i];
+        cout << arr[i] << " ";
     }
-    cout << "\nMode:" << getMode(arr) << endl;
+    cout << endl;
+    cout << "Mode: " << getMode(arr);
 }
