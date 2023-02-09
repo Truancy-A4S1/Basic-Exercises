@@ -44,6 +44,7 @@ int primenumbers(int input)
 
 int main()
 {
-    int input = 30;
-    cout << primenumbers(input);
+    int input{};
+    cout << "Enter A Number: "; cin >> input;
+    cout << "Prime Numbers in " << input << ": " << primenumbers(input);
 }
