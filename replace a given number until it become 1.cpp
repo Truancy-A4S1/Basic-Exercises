@@ -30,6 +30,4 @@ int main()
     int n;
     cout << "n: "; cin >> n;
     cout << "Number of replacements: " << replaceUntilOne(n) << endl;
-
-
 }
