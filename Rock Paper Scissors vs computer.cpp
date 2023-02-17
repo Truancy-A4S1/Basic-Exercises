@@ -1,6 +1,3 @@
-
-/// SAVE FIRST BEFORE TYPING CODE
-
 #include <cstdlib>
 #include <iostream>
 #include <time.h>
